@@ -35,7 +35,7 @@ export default function ProgramsPage() {
     return (
         <div className="min-h-screen pt-24 pb-12">
             <div className="text-center px-4 mb-20">
-                <h1 className="text-5xl md:text-7xl font-black italic mb-6">CHOOSE YOUR <span className="text-gradient">PATH</span></h1>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">CHOOSE YOUR <span className="text-gradient">PATH</span></h1>
                 <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                     Whether you're training for a championship or life itself, we have a program engineered for your goals.
                 </p>
@@ -43,7 +43,7 @@ export default function ProgramsPage() {
 
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 {programs.map((program, idx) => (
-                    <Card key={idx} className={`relative flex flex-col ${program.popular ? 'border-cyan-400 shadow-[0_0_30px_rgba(0,212,255,0.15)]' : ''}`}>
+                    <Card key={idx} className={`relative flex flex-col ${program.popular ? 'border-cyan-400/50 hover:border-cyan-400' : 'hover:border-white/20'}`}>
                         {program.popular && (
                             <div className="absolute top-0 right-0 bg-cyan-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-bl-xl uppercase">
                                 Most Popular
@@ -51,7 +51,7 @@ export default function ProgramsPage() {
                         )}
 
                         <div className="mb-8">
-                            <h3 className="text-2xl font-black italic tracking-wider mb-2">{program.name}</h3>
+                            <h3 className="text-xl font-bold tracking-wider mb-2">{program.name}</h3>
                             <div className="flex items-baseline gap-1">
                                 <span className="text-4xl font-bold text-white">{program.price}</span>
                                 <span className="text-slate-500">{program.period}</span>

@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Elev8 Performance Theme */
-  --background: #051923; /* Deep Navy/Teal */
-  --foreground: #F0F9FF; /* Pale Blue/White */
-  
-  --color-primary: #00D4FF; /* Electric Cyan */
-  --color-secondary: #009CA6; /* Teal */
-  --color-accent: #00D4FF; /* detailed accent */
-  
-  --color-surface: #0a2a3a; /* Slightly lighter navy for cards */
-  --color-muted: #64748b;
-  
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Elev8 Performance Theme - Minimalist */
+  --background: #051923;
+  /* Deep Navy */
+  --foreground: #F0F9FF;
+  /* Pale Blue/White */
+
+  --color-primary: #00D4FF;
+  /* Cyan */
+  --color-secondary: #009CA6;
+  /* Teal */
+
+  --color-surface: #0a2a3a;
+  --color-muted: #94a3b8;
+  /* Lighter muted text for better contrast */
+
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -22,37 +25,42 @@
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
   --color-card: var(--color-surface);
-  --color-accent: var(--color-accent);
   --color-muted: var(--color-muted);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* Glassmorphism Utility */
+/* Minimalist Glass Utility */
 .glass {
-  background: rgba(10, 42, 58, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 42, 58, 0.4);
+  /* More transparent */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* Only bottom border for nav usually */
 }
 
+/* Clean Card Utility */
 .glass-card {
-    background: linear-gradient(145deg, rgba(6, 33, 46, 0.9) 0%, rgba(5, 25, 35, 0.8) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 212, 255, 0.1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 212, 255, 0.2);
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #00D4FF, #009CA6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #00D4FF, #009CA6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
-

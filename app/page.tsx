@@ -15,7 +15,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
                 ELEV8 YOUR <br />
                 <span className="text-gradient">PERFORMANCE</span>
               </h1>
@@ -28,16 +28,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex-1 relative">
-              <div className="relative w-full aspect-square max-w-lg mx-auto">
-                <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute inset-4 border border-teal-500/30 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative z-10 p-10 glass-card rounded-full">
-                    <Zap size={100} className="text-cyan-400 drop-shadow-[0_0_15px_rgba(0,212,255,0.8)]" />
-                  </div>
-                </div>
-              </div>
+            <div className="flex-1 relative flex justify-center">
+              <div className="relative w-full max-w-sm aspect-square bg-gradient-to-tr from-cyan-500/20 to-teal-500/20 rounded-full blur-3xl" />
+              <Zap size={120} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-cyan-400" />
             </div>
           </div>
         </div>
@@ -46,8 +39,8 @@ export default function Home() {
       {/* ------------------- PHILOSOPHY (HEART TO HEART) ------------------- */}
       <section className="py-24 relative">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Heart className="text-cyan-400 w-16 h-16 mx-auto mb-6 animate-pulse" />
-          <h2 className="text-3xl md:text-5xl font-black italic mb-8">HEART TO <span className="text-cyan-400">HEART</span></h2>
+          <Heart className="text-cyan-400 w-12 h-12 mx-auto mb-6 opacity-80" />
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">HEART TO <span className="text-cyan-400">HEART</span></h2>
           <p className="text-xl text-slate-300 leading-relaxed mb-8">
             Elev8 is more than just a gym—it's a global fitness community simplifying performance for everyone. Whether you're a seasoned athlete or just starting, we use data-driven <strong>Bio-Metrics</strong> to discover the best in you.
           </p>
@@ -61,7 +54,7 @@ export default function Home() {
       <section className="py-24 bg-[#0a2a3a]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black italic mb-4">OUR <span className="text-gradient">ECOSYSTEM</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="text-gradient">ECOSYSTEM</span></h2>
             <p className="text-slate-400 max-w-2xl mx-auto">A simple way to a personalized fitness journey.</p>
           </div>
 
@@ -105,7 +98,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#051923] via-[#08202d] to-[#051923] -z-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-black italic text-center mb-16">START YOUR <span className="text-cyan-400">JOURNEY</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">START YOUR <span className="text-cyan-400">JOURNEY</span></h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -113,8 +106,8 @@ export default function Home() {
               { title: "ATHLETE", subtitle: "Performance", desc: "Explosive power & agility training.", link: "/programs" },
               { title: "LIFESTYLE", subtitle: "General Health", desc: "Sustainable fitness for busy professionals.", link: "/programs" }
             ].map((prog, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:border-cyan-500/50 hover:bg-white/10">
-                <h3 className="text-2xl font-black italic text-white mb-2">{prog.title}</h3>
+              <div key={i} className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-8 transition-all hover:bg-white/10">
+                <h3 className="text-2xl font-bold text-white mb-2">{prog.title}</h3>
                 <p className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-4">{prog.subtitle}</p>
                 <p className="text-slate-400 mb-8">{prog.desc}</p>
                 <Link href={prog.link} className="inline-flex items-center gap-2 text-white font-bold group-hover:text-cyan-400 transition-colors">
@@ -130,7 +123,7 @@ export default function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-black italic mb-4">REAL <span className="text-gradient">RESULTS</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">REAL <span className="text-gradient">RESULTS</span></h2>
             <p className="text-slate-400">See what happens when you commit to the process.</p>
           </div>
 
@@ -140,40 +133,34 @@ export default function Home() {
               { name: "Sarah M.", loss: "-18% Body Fat", gain: "2x Strength", time: "6 Months", desc: "From desk job posture to deadlifting 200lbs." },
               { name: "James R.", loss: "-40 lbs", gain: "Marathon Ready", time: "8 Months", desc: "Reclaimed his health and vitality at age 45." }
             ].map((item, i) => (
-              <Card key={i} className="p-0 overflow-hidden group">
-                {/* Before/After Image Placeholder Split */}
-                <div className="relative h-64 w-full flex">
-                  <div className="w-1/2 bg-slate-800 flex items-center justify-center border-r border-white/10 relative">
-                    <span className="text-slate-500 font-mono text-xs z-10">BEFORE</span>
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+              <Card key={i} className="p-0 overflow-hidden border-none bg-transparent group">
+                {/* Simple Image Split - Grayscale to Color on Hover */}
+                <div className="relative h-64 w-full flex grayscale group-hover:grayscale-0 transition-all duration-500">
+                  <div className="w-1/2 bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                    {/* Placeholder Pattern */}
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent" />
                   </div>
-                  <div className="w-1/2 bg-slate-700 flex items-center justify-center relative">
-                    <span className="text-cyan-400 font-mono text-xs font-bold z-10">AFTER</span>
-                    <div className="absolute inset-0 bg-cyan-900/20 group-hover:bg-cyan-900/10 transition-colors" />
-                  </div>
-
-                  {/* Floating Badge */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-cyan-500/30">
-                    <span className="text-cyan-400 text-xs font-bold">{item.time}</span>
+                  <div className="w-1/2 bg-slate-700 flex items-center justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-400 to-transparent" />
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                      <p className="text-sm text-slate-400">{item.desc}</p>
-                    </div>
+                <div className="pt-6">
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                    <span className="text-cyan-400 text-sm font-medium bg-cyan-900/10 px-2 py-1 rounded">{item.time}</span>
                   </div>
+                  <p className="text-slate-400 text-sm mb-6 leading-relaxed min-h-[40px]">{item.desc}</p>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                      <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">Fat Loss</p>
-                      <p className="text-white font-bold">{item.loss}</p>
+                  <div className="flex items-center gap-6 text-sm border-t border-white/5 pt-4">
+                    <div>
+                      <span className="block text-slate-500 text-[10px] uppercase tracking-wider mb-0.5">Lost</span>
+                      <span className="font-bold text-white">{item.loss}</span>
                     </div>
-                    <div className="bg-cyan-900/20 rounded-lg p-3 text-center border border-cyan-500/20">
-                      <p className="text-xs text-cyan-400 uppercase tracking-wider mb-1">Gain</p>
-                      <p className="text-white font-bold">{item.gain}</p>
+                    <div className="w-px h-8 bg-white/10" />
+                    <div>
+                      <span className="block text-slate-500 text-[10px] uppercase tracking-wider mb-0.5">Gained</span>
+                      <span className="font-bold text-white">{item.gain}</span>
                     </div>
                   </div>
                 </div>
@@ -186,7 +173,7 @@ export default function Home() {
       {/* ------------------- CLIENT TESTIMONIALS (MEET THE COMMUNITY) ------------------- */}
       <section className="py-24 bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-black italic text-center mb-16">MEET THE <span className="text-cyan-400">COMMUNITY</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">MEET THE <span className="text-cyan-400">COMMUNITY</span></h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -217,7 +204,7 @@ export default function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black italic mb-4">MEET THE <span className="text-gradient">TEAM</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">MEET THE <span className="text-gradient">TEAM</span></h2>
             <p className="text-slate-400">Learn from the best in the industry.</p>
           </div>
 
@@ -256,7 +243,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-cyan-900/10" />
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-black italic mb-8">READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">ASCEND?</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">ASCEND?</span></h2>
           <p className="text-xl text-slate-300 mb-10">
             Your future self is waiting. Don't let another day pass without taking action towards the strongest version of you.
           </p>

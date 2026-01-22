@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div className="min-h-screen pt-24 pb-12">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-black italic mb-6">GET IN <span className="text-cyan-400">TOUCH</span></h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6">GET IN <span className="text-cyan-400">TOUCH</span></h1>
                     <p className="text-xl text-slate-400">Ready to start? Have questions? We're here to help.</p>
                 </div>
 
