@@ -1,0 +1,79 @@
+.section {
+    padding: var(--section-spacing) 0;
+    padding-bottom: 0;
+    /* Removing bottom padding adjustments, handling in container */
+    /* background: linear-gradient(180deg, var(--primary-blue) 0%, #172554 100%);  Moving gradient to standard section style if needed, or keeping it but updating layout */
+    background-color: transparent;
+    /* Changing to white for standard section vibe, OR keep dark? User reference implies clean look. Let's keep dark for CTA as it pops. */
+    /* background: linear-gradient(180deg, var(--primary-blue) 0%, #172554 100%); Removed */
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 8rem;
+        /* Space */
+    }
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.content {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: #bfdbfe;
+    line-height: 1.6;
+}
+
+.button {
+    padding: 1rem 3rem;
+    background-color: var(--tertiary);
+    color: var(--primary-blue);
+    font-weight: 800;
+    font-size: 1.125rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(183, 247, 219, 0.4);
+}
+
+.visuals {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.ctaImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    transform: rotate(3deg);
+    /* Slight playful tilt like reference often has */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}

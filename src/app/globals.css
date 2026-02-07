@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Colors */
+  --white: #ffffff;
+  --black: #0a0a0a;
+
+  --primary-blue: #1b3898;
+  /* Deep Royal Blue */
+  --primary-blue-hover: #152c7a;
+
+  --bg-gradient-start: #eef2ff;
+  --bg-gradient-end: #ffffff;
+
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --text-light: #f3f4f6;
+
+  --tertiary: #adf8ff;
+  --accent-lime: #dde4ff;
+  /* Mapped to tertiary for backward compatibility */
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+
+  /* Spacing */
+  --section-spacing: 120px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #17265a 100%);
+  background-attachment: fixed;
+  /* Optional: keeps gradient fixed while scrolling, or let it flow? User said "changing from hero to footer". Fixed might look like it doesn't change as you scroll. Standard scroll is better. */
+  background: linear-gradient(180deg, #eef2ff 0%, #17265a 100%);
+  min-height: 100vh;
+  color: var(--text-main);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-spacing) 0;
+}
+
+/* Button Reset */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
