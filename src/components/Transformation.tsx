@@ -1,60 +1,98 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
 import styles from './Transformation.module.css';
 
+interface TransformationImage {
+    id: number;
+    type: 'pair' | 'single';
+    before?: string;
+    after?: string;
+    combined?: string;
+}
+
+const transformations: TransformationImage[] = [
+    { id: 1, type: 'pair', before: '/transformation/transform_1a.jpg', after: '/transformation/transform_1b.jpg' },
+    { id: 2, type: 'pair', before: '/transformation/transform_2a.jpg', after: '/transformation/transform_2b.jpg' },
+    { id: 3, type: 'single', combined: '/transformation/transform_3ab.jpg' },
+    { id: 4, type: 'pair', before: '/transformation/transform_4a.jpg', after: '/transformation/transform_4b.jpg' },
+    { id: 5, type: 'pair', before: '/transformation/transform_5a.jpg', after: '/transformation/transform_5b.jpg' },
+    // { id: 6, type: 'single', combined: '/transformation/transform_6ab.jpeg' },
+    { id: 7, type: 'pair', before: '/transformation/transform_7a.jpeg', after: '/transformation/transform_7b.jpeg' },
+    { id: 8, type: 'single', combined: '/transformation/transform_8ab.jpeg' },
+    { id: 9, type: 'single', combined: '/transformation/transform_9ab.jpeg' },
+    { id: 10, type: 'single', combined: '/transformation/transform_10ab.jpeg' },
+    { id: 11, type: 'single', combined: '/transformation/transform_11ab.jpeg' },
+]; ``
+
 export default function Transformation() {
+    // Duplicate the array to ensure seamless looping
+    const displayTransformations = [...transformations, ...transformations];
+
     return (
         <section className={styles.section} id="transformation">
             <div className={styles.container}>
-                <div className={styles.textContent}>
+                <div className={styles.header}>
                     <motion.h2
                         className={styles.title}
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
                         THE ROAD TO EXCELLENCE
                     </motion.h2>
-
                     <motion.p
-                        className={styles.content}
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className={styles.description}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        Transformation is not an event; it&apos;s a process. It begins with a commitment to change and is sustained through structure and accountability. We guide you through every phase, from building a solid foundation to refining your physique. Our data-driven approach ensures that every rep, every meal, and every recovery session contributes to your ultimate goal. Success is inevitable when preparation meets discipline.
+                        Real results from dedicated individuals. See what's possible with commitment and the right guidance.
                     </motion.p>
                 </div>
 
-                <div className={styles.visuals}>
+                <div className={styles.carouselContainer}>
                     <motion.div
-                        className={styles.imageOne}
-                        initial={{ opacity: 0, y: -30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.8 }}
+                        className={styles.carouselTrack}
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            repeat: Infinity,
+                            ease: "linear",
+                            duration: 30, // Adjust speed here
+                            repeatType: "loop"
+                        }}
+                        whileHover={{ animationPlayState: "paused" }}
                     >
-                        <img
-                            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80"
-                            alt="Trainer"
-                            className={styles.img}
-                        />
-                    </motion.div>
-                    <motion.div
-                        className={styles.imageTwo}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                        <img
-                            src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80"
-                            alt="Action"
-                            className={styles.img}
-                        />
+                        {displayTransformations.map((item, index) => (
+                            <div
+                                key={`${item.id}-${index}`}
+                                className={styles.card}
+                            >
+                                {item.type === 'pair' ? (
+                                    <div className={styles.pairContainer}>
+                                        <div className={styles.imageWrapper}>
+                                            <span className={styles.label}>Before</span>
+                                            <img src={item.before} alt="Before transformation" className={styles.image} />
+                                        </div>
+                                        <div className={styles.imageWrapper}>
+                                            <span className={styles.label}>After</span>
+                                            <img src={item.after} alt="After transformation" className={styles.image} />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className={styles.singleContainer}>
+                                        <div className={styles.imageWrapper}>
+                                            <span className={styles.label}>Before</span>
+                                            <span className={styles.label}>After</span>
+                                            <img src={item.combined} alt="Transformation journey" className={styles.image} />
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </motion.div>
                 </div>
             </div>

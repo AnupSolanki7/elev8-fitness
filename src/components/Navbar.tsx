@@ -19,11 +19,17 @@ export default function Navbar() {
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
-                <Link href="/" className="flex flex-col">
-                    <span className='text-2xl font-bold' >Elev<b className='text-[#1b3898]' >8</b></span>
-                    <p className='text-xs font-semibold text-[#1b3898]' >Performance</p>
+                <Link href="/" className="flex flex-col items-start">
+                    <span className="text-2xl font-black tracking-wide">
+                        Elev<span className="text-[#1b3898]">8</span>
+                    </span>
 
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400">
+                        Performance
+                    </span>
                 </Link>
+
+
                 <div className='flex items-center gap-12'>
                     <ul className={`${styles.navLinks} text-[#1b3898]`}>
                         <li><Link href="#about" className={styles.navLink}>About</Link></li>

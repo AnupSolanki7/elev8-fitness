@@ -14,7 +14,7 @@
     font-size: 3rem;
     color: var(--primary-blue);
     line-height: 1;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     font-weight: 800;
     text-transform: uppercase;
     max-width: 800px;
@@ -71,5 +71,6 @@
 .description {
     font-size: 1.125rem;
     line-height: 1.7;
+    font-weight: 600;
     color: #4b5563;
 }

@@ -1,6 +1,5 @@
 .section {
     padding: var(--section-spacing) 0;
-    background-color: transparent;
     overflow: hidden;
 }
 
@@ -8,81 +7,160 @@
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 24px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    align-items: center;
 }
 
-@media (min-width: 992px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.textContent {
-    order: 2;
-}
-
-@media (min-width: 992px) {
-    .textContent {
-        order: 1;
-    }
-
-    .visuals {
-        order: 2;
-    }
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
     font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 2rem;
-    line-height: 1.1;
-    color: var(--white);
-    /* White title for contrast on dark gradient */
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
-.content {
+.description {
     font-size: 1.125rem;
     line-height: 1.7;
-    color: #e5e7eb;
-    /* Light gray text */
+    color: #f0f6ff;
 }
 
-.visuals {
-    position: relative;
-    height: 500px;
+.carouselContainer {
     width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
 }
 
-.imageOne {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70%;
-    aspect-ratio: 3/4;
-    border-radius: 30px;
+.carouselContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+    width: max-content;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .card {
+        min-width: 400px;
+        max-width: 400px;
+    }
+}
+
+.pairContainer {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    height: 300px;
+}
+
+.imageWrapper {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    z-index: 1;
 }
 
-.imageTwo {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60%;
-    aspect-ratio: 1/1;
-    border-radius: 30px;
+.singleContainer {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    border: 8px solid #f8fafc;
+    position: relative;
 }
 
-.img {
+.image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+.label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+    /* Default fallback */
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* Pair specific overrides */
+.pairContainer .imageWrapper:first-child .label {
+    text-align: left;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding-left: 1.5rem;
+}
+
+.pairContainer .imageWrapper:last-child .label {
+    text-align: right;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding-right: 1.5rem;
+}
+
+/* Single container (combined image) styles */
+.singleContainer .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.singleContainer .label {
+    width: 50%;
+    bottom: 0;
+    top: auto;
+}
+
+.singleContainer .label:nth-of-type(1) {
+    left: 0;
+    right: auto;
+    text-align: left;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding-left: 1.5rem;
+}
+
+.singleContainer .label:nth-of-type(2) {
+    right: 0;
+    left: auto;
+    text-align: right;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding-right: 1.5rem;
 }

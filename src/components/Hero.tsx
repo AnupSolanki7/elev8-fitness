@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Activity, Zap, Trophy } from 'lucide-react';
+import HeroImage from '../app/assets/images/Float2.jpeg';
 import styles from './Hero.module.css';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
@@ -58,10 +59,12 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                 >
                     <div className={styles.imageWrapper}>
-                        <img
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
+                        <Image
+                            src={HeroImage}
                             alt="Fitness Motivation"
                             className={styles.heroImage}
+                            width={800}
+                            height={600}
                         />
                     </div>
                 </motion.div>

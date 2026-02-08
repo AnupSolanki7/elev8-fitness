@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import styles from './CallToAction.module.css';
+import CTAImage from '../app/assets/images/Float1.jpeg';
+import Image from 'next/image';
 
 export default function CallToAction() {
     return (
@@ -47,10 +49,12 @@ export default function CallToAction() {
                     viewport={{ once: false }}
                     transition={{ duration: 0.8 }}
                 >
-                    <img
-                        src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80"
+                    <Image
+                        src={CTAImage}
                         alt="Start Evolving"
                         className={styles.ctaImage}
+                        width={800}
+                        height={600}
                     />
                 </motion.div>
             </div>
