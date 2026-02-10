@@ -24,6 +24,8 @@ const transformations: TransformationImage[] = [
     { id: 9, type: 'single', combined: '/transformation/transform_9ab.jpeg' },
     { id: 10, type: 'single', combined: '/transformation/transform_10ab.jpeg' },
     { id: 11, type: 'single', combined: '/transformation/transform_11ab.jpeg' },
+    { id: 11, type: 'single', combined: '/transformation/transform_12ab.jpeg' },
+    { id: 11, type: 'single', combined: '/transformation/transform_13ab.jpeg' },
 ]; ``
 
 export default function Transformation() {

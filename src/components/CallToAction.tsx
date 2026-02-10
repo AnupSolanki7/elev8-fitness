@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import styles from './CallToAction.module.css';
-import CTAImage from '../app/assets/images/Float1.jpeg';
+import CTAImage from '../app/assets/images/CTA.jpg';
 import Image from 'next/image';
 
 export default function CallToAction() {
@@ -38,7 +38,7 @@ export default function CallToAction() {
                         transition={{ delay: 0.4 }}
                         viewport={{ once: false }}
                     >
-                        APPLY FOR COACHING
+                        JOIN THE MOVEMENT
                     </motion.button>
                 </div>
 
